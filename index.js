@@ -8,7 +8,7 @@ const character = newImage('assets/green-character/static.gif')
 // let y = 250;
 //I have gone through the activity twice. I can't get anything to happen when I try to move the green guy. I can see the numbers moving in the div tools but nothing on screen. 
 //When I get to the handleDirectionChange everything goes off the screen so moved it into the function but I am pretty sure this is not right.
-function handleDirectionChange(){
+function handleDirectionChange(direction){
 
     if(direction === null){
         character.src = 'assets/green-character/static.gif'
@@ -25,9 +25,42 @@ function handleDirectionChange(){
     if(direction === 'south'){
         character.src = 'assets/green-character/south.gif'
     }
-
-move(character).withArrowKeys(100, 250, handleDirectionChange)
 }
+move(character).withArrowKeys(100, 250, handleDirectionChange)
+
+// function wait(duration) {
+//     let start = new Date().getTime()
+//     let now = start;
+//     while(now < start + duration){
+//         now = new Date.getTime()
+//     }
+// }
+// .moveEast() 
+//     setTimeout(() => {
+//         console.log('Hello World')
+//       }, 1500)
+         
+// .moveSouth()
+//     setTimeout(() => {
+//         console.log('Hello World')
+//     }, 1500)
+     
+// .moveWest()
+//     setTimeout(() => {
+//         console.log('Hello World')
+//     }, 1500)
+    
+// .moveNorth()
+//     setTimeout(() => {
+//         console.log('Hello World')
+//     }, 1500)
+      
+// .stop()
+//     setTimeout(() => {
+//         console.log('Hello World')
+//     }, 1500)
+      
+
 // setInterval(function(){
 // if(direction === 'west'){
 //     x = x - 1
@@ -69,9 +102,10 @@ move(character).withArrowKeys(100, 250, handleDirectionChange)
 //     }
 // })
 
-// document.addEventListener('keyup', function(e){
-//     direction = null
-// })
+// // document.addEventListener('keyup', function(e){
+// //     direction = null
+// // })
+
 move(newImage('assets/tree.png')).to(200, 450)
 move(newImage('assets/pillar.png')).to(350, 250)
 move(newImage('assets/pine-tree.png')).to(450, 350)

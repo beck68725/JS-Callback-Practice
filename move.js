@@ -11,22 +11,18 @@ function move(element) {
         let x = left;
         let y = bottom;
 
-        element.style.left = x + 'px'
-        element.style.bottom = y + 'px'
-        
+       
         function moveCharacter(){ 
             if(direction === 'west'){
                 x-=1
-            }
-            if(direction === 'north'){
+            } else if(direction === 'north'){
                 y+=1
-            }
-            if(direction === 'east'){
+            } else if(direction === 'east'){
                 x+=1
-            }
-            if(direction === 'south'){
+            }else if(direction === 'south'){
                 y-=1
             }
+
             element.style.left = x + 'px'
             element.style.bottom = y + 'px'
         }
@@ -58,6 +54,7 @@ function move(element) {
     }
 
     return {
-        to: moveToCoordinates
+        to: moveToCoordinates,
+        withArrowKeys: moveWithArrowKeys
     }
 }
